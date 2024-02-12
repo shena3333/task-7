@@ -1,0 +1,22 @@
+.body {
+    background-color: rgb(161, 161, 245);
+}
+.navigator{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+.link-menu{
+  align-items: center;
+  margin: auto;
+  padding: 5px;
+}
+.link-menu-active{
+  align-items: center;
+  margin: auto;
+  padding: 5px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 5px 5px 14px 8px rgba(34, 60, 80, 0.2);
+  border-radius: 20px;
+}
