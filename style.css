@@ -1,17 +1,20 @@
 .body {
-    background-color: rgb(161, 161, 245);
+  background-color: rgb(161, 161, 245);
 }
-.navigator{
-    display: flex;
-    flex-direction: column;
-    width: auto;
+
+.navigator {
+  display: flex;
+  flex-direction: column;
+  width: auto;
 }
-.link-menu{
+
+.link-menu {
   align-items: center;
   margin: auto;
   padding: 5px;
 }
-.link-menu-active{
+
+.link-menu-active {
   align-items: center;
   margin: auto;
   padding: 5px;
@@ -19,4 +22,38 @@
   font-weight: 600;
   box-shadow: 5px 5px 14px 8px rgba(34, 60, 80, 0.2);
   border-radius: 20px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 100px 100px 150px;
+}
+
+.form-elem {
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+.popup-reg {
+  width: 300px;
+  background-color: white;
+  border: solid grey 2px;
+  border-radius: 10px;
+}
+
+.flex-popup-reg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-reg {
+  width: 80px;
+}
+.reg-user{
+  margin: 5px;
+}
+.image{
+  width: 100px;
+  height: 100px;
 }
