@@ -42,9 +42,7 @@ let user = {
 // поля заполнены, иначе выведите предупреждение.
 
 let inputForm = document.querySelectorAll('.input-form');
-console.log(inputForm);
 let checkReg = document.querySelector('.check-reg');
-console.log(checkReg)
 checkReg.addEventListener('click', check);
 function check() {
     for (let i = 0; i < inputForm.length; i++) {
@@ -63,22 +61,58 @@ let img = [{
     url: './img/kvadro.png',
     alt: 'kvadro'
 },];
-let gallery = document.querySelector('.gallery');
-let newImg = document.createElement('img');
-newImg.className='image';
-newImg.src=img[0].url;
-newImg.alt=img[0].alt;
-console.log (newImg);
-gallery.insertAdjacentHTML("afterbegin",newImg);
-gallery.insertAdjacentHTML("afterbegin",'<img src="./img/kvadro.png">')
+// function autoImg(img) {
+//     let gallery = document.querySelector('.gallery');
+//     for (let i = 0; i < img.length; i++) {
+//         let newImg = document.createElement('img');
+//         newImg.className = 'image';
+//         newImg.src = img[i].url;
+//         newImg.alt = img[i].alt;
+//         gallery.append(newImg);
+//     }
+// }
+function autoImg(img) {
+    let gallery = document.querySelector('.gallery');
+    img.map((value, i) => {
+        let newImg = document.createElement('img');
+        newImg.className = 'image';
+        newImg.src = value.url;
+        newImg.alt = value.alt;
+        gallery.append(newImg);
+    })
+}
+autoImg(img)
 
 //  Установка и получение атрибута
 // Создайте HTML-страницу с кнопкой <button> и при помощи JavaScript задайте этой кнопке атрибут id со значением "myButton". После этого,
 //  используя JavaScript, получите и выведите в консоль значение атрибута id этой кнопки.
+
+let myButton = document.querySelector('.my-button');
+myButton.addEventListener('click', addIdtoButton)
+function addIdtoButton() {
+    myButton.id = 'myButton';
+    console.log(myButton)
+}
 //  Изменение стилей элемента
 // Добавьте на страницу элемент <div> без стилей. С помощью JavaScript, установите для этого элемента стиль так, чтобы он имел красный
 // цвет фона, черный цвет текста и ширину 200px. Все стили должны быть установлены через атрибут style с использованием JavaScript.
+let divNoStyle = document.querySelector('.no-style');
+divNoStyle.style = "background-color: red;color: black;width: 200px;"
 //  Работа с классами элемента
 // Пусть на вашей странице есть список <ul> с несколькими элементами <li>. Ваша задача — написать функцию на JavaScript, которая будет
 // добавлять класс "highlight" к элементу списка, когда пользователь наводит на него курсор, и удалять этот класс, когда курсор уходит
 // с элемента. Для этого используйте свойства classList.add() и classList.remove().
+
+// let cat = document.querySelectorAll('.cat');// работает
+// getElementsByTagName// решила попробовать
+let cat = document.getElementsByTagName('li');
+for (let i = 0; i < cat.length; i++) {
+    cat[i].addEventListener("mouseover", addHighlight);
+    function addHighlight() {
+        cat[i].classList.add('highlight')
+    };
+    cat[i].addEventListener("mouseout", deleteHighlight);
+    function deleteHighlight() {
+        cat[i].classList.remove('highlight');
+    }
+}
