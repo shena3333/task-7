@@ -28,15 +28,15 @@ let user = {
     surname: 'Кондрикова',
     email: 'shena3333@mail.ru'
 };
-// function addInfoToForm(user) {
-//     let userName = document.querySelector('.user-name');
-//     userName.textContent = user.name;
-//     let userSurname = document.querySelector('.user-surname');
-//     userSurname.textContent = user.surname;
-//     let userEmail = document.querySelector('.user-email');
-//     userEmail.textContent = user.email;
-// }
-// addInfoToForm()
+function addInfoToForm(user) {
+    let userName = document.querySelector('.user-name');
+    userName.textContent = user.name;
+    let userSurname = document.querySelector('.user-surname');
+    userSurname.textContent = user.surname;
+    let userEmail = document.querySelector('.user-email');
+    userEmail.textContent = user.email;
+}
+addInfoToForm(user)
 // Валидация формы на клиенте:
 // У вас есть форма регистрации с полями и кнопкой отправки. Поля должны иметь атрибуты required. Проверьте перед отправкой, что все 
 // поля заполнены, иначе выведите предупреждение.
@@ -105,14 +105,17 @@ divNoStyle.style = "background-color: red;color: black;width: 200px;"
 
 // let cat = document.querySelectorAll('.cat');// работает
 // getElementsByTagName// решила попробовать
-let cat = document.getElementsByTagName('li');
-for (let i = 0; i < cat.length; i++) {
-    cat[i].addEventListener("mouseover", addHighlight);
-    function addHighlight() {
-        cat[i].classList.add('highlight')
-    };
-    cat[i].addEventListener("mouseout", deleteHighlight);
-    function deleteHighlight() {
-        cat[i].classList.remove('highlight');
+function addRemoveClass() {
+    let cat = document.getElementsByTagName('li');
+    for (let i = 0; i < cat.length; i++) {
+        cat[i].addEventListener("mouseover", addHighlight);
+        function addHighlight() {
+            cat[i].classList.add('highlight')
+        };
+        cat[i].addEventListener("mouseout", deleteHighlight);
+        function deleteHighlight() {
+            cat[i].classList.remove('highlight');
+        }
     }
 }
+addRemoveClass()
