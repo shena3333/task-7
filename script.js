@@ -47,7 +47,8 @@ checkReg.addEventListener('click', check);
 function check() {
     for (let i = 0; i < inputForm.length; i++) {
         if (inputForm[i].value == '') {
-            alert(`Заполните поля регистрации: ${inputForm[i].placeholder}`)
+            alert(`Заполните поля регистрации: ${inputForm[i].placeholder}`);
+            return
         }
     }
 }
@@ -73,7 +74,7 @@ let img = [{
 // }
 function autoImg(img) {
     let gallery = document.querySelector('.gallery');
-    img.map((value, i) => {
+    img.map((value) => {
         let newImg = document.createElement('img');
         newImg.className = 'image';
         newImg.src = value.url;
@@ -108,14 +109,18 @@ divNoStyle.style = "background-color: red;color: black;width: 200px;"
 function addRemoveClass() {
     let cat = document.getElementsByTagName('li');
     for (let i = 0; i < cat.length; i++) {
-        cat[i].addEventListener("mouseover", addHighlight);
-        function addHighlight() {
+        // cat[i].addEventListener("mouseover", addHighlight);
+        // function addHighlight() {
+        //     cat[i].classList.add('highlight')
+        // };
+        cat[i].addEventListener("mouseover", function(){
             cat[i].classList.add('highlight')
-        };
-        cat[i].addEventListener("mouseout", deleteHighlight);
-        function deleteHighlight() {
+        });
+   
+        cat[i].addEventListener("mouseout", function() {
             cat[i].classList.remove('highlight');
-        }
+        });
+        
     }
 }
 addRemoveClass()
